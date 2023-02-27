@@ -18,6 +18,7 @@ RUN npm install
 COPY . .
 
 EXPOSE 80
+ENTRYPOINT ["echo"]
 CMD [ "npm", "start" ]
 
 # This is dummy change for git demo
