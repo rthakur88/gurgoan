@@ -1,8 +1,8 @@
 # Pull base image
-FROM centos:latest
+FROM ubuntu:latest
 
 # Dockerfile Maintainer
-MAINTAINER Jan Wagner "waja@cyconet.org"
+#MAINTAINER Jan Wagner "waja@cyconet.org"
 
 # Install nginx and adjust nginx config to stay in foreground
 RUN apt-get update && apt-get install --no-install-recommends -y nginx; \
