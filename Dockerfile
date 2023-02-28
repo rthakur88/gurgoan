@@ -1,5 +1,5 @@
 # Pull base image
-FROM ubuntu:latest
+FROM ubuntu:20.04
 
 # Dockerfile Maintainer
 #MAINTAINER Jan Wagner "waja@cyconet.org"
@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y nginx; \
 EXPOSE 80
 
 # Start nginx
-ENTRYPOINT ["/usr/sbin/nginx"]
+CMD ["/usr/sbin/nginx"]
 
 #FROM node:16
 # Create app directory
