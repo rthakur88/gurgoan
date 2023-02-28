@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y nginx; \
 EXPOSE 80
 
 # Start nginx
-CMD ["/usr/sbin/nginx"]
+ENTRYPOINT ["/usr/sbin/nginx"]
 
 #FROM node:16
 # Create app directory
