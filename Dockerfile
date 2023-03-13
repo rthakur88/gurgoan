@@ -1,5 +1,5 @@
 # Pull base image
-FROM base-java-image:latest
+FROM java:latest
 
 WORKDIR /cars24
 ADD target/service.jar .
