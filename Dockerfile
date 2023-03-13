@@ -1,19 +1,23 @@
 # Pull base image
-FROM ubuntu:20.04
+FROM base-java-image:latest
+
+WORKDIR /cars24
+ADD target/service.jar .
+CMD ["sh", "-c", "java -javaagent:/agent/dd-java-agent.jar -jar service.jar"]
 
 # Dockerfile Maintainer
 #MAINTAINER Jan Wagner "waja@cyconet.org"
 
 # Install nginx and adjust nginx config to stay in foreground
-RUN apt-get update && apt-get install --no-install-recommends -y nginx; \
- echo "daemon off;" >> /etc/nginx/nginx.conf
+#RUN apt-get update && apt-get install --no-install-recommends -y nginx; \
+ #echo "daemon off;" >> /etc/nginx/nginx.conf
 
 # Expose HTTP
-EXPOSE 80
+EXPOSE 8080
 
 # Start nginx
 #CMD ["/usr/sbin/nginx"]
-CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
+#CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
 
 #FROM node:16
 # Create app directory
